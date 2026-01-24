@@ -1,0 +1,50 @@
+<?php
+ 
+//phpinfo();
+
+$patterns = [
+    '$beCQ=',
+    'eval(base64_decode',
+    'assert(',
+    'str_rot13'
+];
+
+echo "<h2>Hasil Scan Malware</h2>";
+echo "<p>Mencari di folder: " . __DIR__ . "</p><hr>";
+
+// Fungsi untuk scan folder secara rekursif
+$directory = new RecursiveDirectoryIterator(__DIR__);
+$iterator = new RecursiveIteratorIterator($directory);
+$files = new RegexIterator($iterator, '/^.+\.php$/i', RecursiveRegexIterator::GET_MATCH);
+
+$found_count = 0;
+
+foreach ($files as $file) {
+    $filePath = $file[0];
+    
+    // Jangan scan file ini sendiri
+    if (basename($filePath) == 'info.php') continue;
+
+    // Baca isi file
+    $content = file_get_contents($filePath);
+    
+    foreach ($patterns as $pattern) {
+        if (strpos($content, $pattern) !== false) {
+            echo "<div style='color:red; margin-bottom:10px;'>";
+            echo "<strong>DITEMUKAN:</strong> " . htmlspecialchars($pattern) . "<br>";
+            echo "<strong>File:</strong> " . $filePath . "<br>";
+            echo "</div>";
+            $found_count++;
+            // Break agar tidak lapor berkali-kali untuk file yang sama (opsional)
+            break; 
+        }
+    }
+}
+
+if ($found_count == 0) {
+    echo "<h3 style='color:green'>Tidak ditemukan file mencurigakan dengan keyword tersebut.</h3>";
+} else {
+    echo "<hr><h3>Total file mencurigakan: $found_count</h3>";
+}
+
+?>
