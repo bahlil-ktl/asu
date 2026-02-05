@@ -1,0 +1,48 @@
+https://www.python.org/ftp/python/3.10.0/python-3.10.0-amd64.exe
+https://go.dev/dl/
+1. Download phyton 10.0
+2. Download go lang
+3. instal phton
+- centang bagian add to path
+- pilih custom
+- next
+- pilih browse langsung ok
+- instal
+4. instal go lang
+5. extract file shell finder
+6. klik bagian atas pencarian folder ketik cmd langsung enter
+7. setelah keluar terminal instal:  pip install -r chris.txt dan pip install pycryptodome
+8. run
+
+ cara jalankan shel findernya all domain
+
+1. ketik 13
+2. pilih dari page berapa ke berapa
+3. Pilih 2
+4. pihih simple
+5. pilih nama resultnya
+6. ketik 50000 pencarian
+
+
+Cara shell finder targeting
+1. Buat list nama domain
+2. simpan di folder shell finder
+3. jalankan di query 1
+
+Cara shell finder per extension per domain
+1. Ketik query 8
+2. ketik domain target contoh com
+3.jalankan shell finder query 1
+4. Masukan nama file nya contoh com.txt
+
+
+Cara cari subdomain
+1. buat list nama domain
+2. ketik query 7
+3. setelah instal ketik query 7 lagi
+4. ikutin arahannya
+
+Cara cari domain sampah
+1. query 9 dan 10
+
+
